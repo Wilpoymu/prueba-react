@@ -1,0 +1,126 @@
+img[alt] {
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 400px;
+  padding: 1em;
+  gap: 8em;
+}
+
+.characterInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2em;
+  margin: 0 auto;
+  max-height: 300px;
+  padding: 1em;
+  text-align: left;
+  font-weight: 600;
+}
+
+.characterInfo h3 {
+  text-decoration: underline;
+}
+
+.basicInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 400px;
+  padding: 1em;
+}
+
+.basicInfo h2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+  font-weight: 700;
+  width: 400px;
+  height: 50px;
+  text-align: center;
+  border: 3px solid #fff;
+  border-radius: 10px;
+}
+
+/* Para escritorio */
+@media (min-width: 992px) {
+  .characterInfo {
+    margin-bottom: 4em;
+    position: relative;
+    padding: 1em;
+    gap: 1em;
+  }
+}
+
+/* Para tablets en modo landscape (horizontal) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .info {
+    gap: 0.5em;
+  }
+  .characterInfo {
+    margin-bottom: 4em;
+    position: relative;
+    padding: 1em;
+    gap: 1em;
+  }
+}
+
+/* Para tablets en modo portrait (vertical) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .info {
+    flex-direction: column;
+    gap: 0.5em;
+  }
+  .characterInfo {
+    margin-bottom: 4em;
+    position: relative;
+    padding: 1em;
+    gap: 1em;
+  }
+}
+
+/* Para móviles */
+@media (max-width: 575px) {
+  .info {
+    flex-direction: column;
+    gap: 0.5em;
+  }
+
+  .characterInfo {
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0 auto;
+    max-width: 320px;
+    max-height: 700px;
+    position: relative;
+    padding: 1em;
+    gap: 0em;
+  }
+
+  .basicInfo {
+    gap: 0.2em;
+  }
+
+  .basicInfo h2 {
+    width: 200%;
+    max-width: 320px;
+    height: 50px;
+    font-size: 1.5em;
+    font-weight: 700;
+    text-align: center;
+  }
+}
