@@ -1,38 +1,32 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { CharactersInfo } from "../CharactersInfo";
 import { Slider } from "../Slider";
 
-class CharactersList extends React.Component {
-  state = {
-    characters: []
-  };
+const CharactersList = () => {
+  const [characters, setCharacters] = useState([]);
 
-  componentDidMount() {
+  useEffect(() => {
     fetch("https://rickandmortyapi.com/api/character")
       .then((response) => response.json())
       .then((data) => {
-        this.setState({ characters: data.results });
+        setCharacters(data.results);
       })
       .catch((error) => {
         console.error(error);
       });
-  }
+  }, []);
 
-  render() {
-    const { characters } = this.state;
-
-    return (
-      <div>
-        <Slider>
-          {characters.map((character) => (
-            <div key={character.id}>
-              <CharactersInfo characterId={character.id} />
-            </div>
-          ))}
-        </Slider>
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      <Slider>
+        {characters.map((character) => (
+          <div key={character.id}>
+            <CharactersInfo characterId={character.id} />
+          </div>
+        ))}
+      </Slider>
+    </div>
+  );
+};
 
 export { CharactersList };

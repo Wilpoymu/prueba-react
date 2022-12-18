@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import "./Slider.css";
 
-function Slider({ children }) {
+const Slider = ({ children }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const items = React.Children.toArray(children);
 
