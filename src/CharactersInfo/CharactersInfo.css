@@ -26,6 +26,9 @@ img[alt] {
   padding: 1em;
   text-align: left;
   font-weight: 600;
+  border: 3px solid #fff;
+  background-color: #00000050;
+  border-radius: 15px;
 }
 
 .characterInfo h3 {
@@ -103,7 +106,7 @@ img[alt] {
   .characterInfo {
     justify-content: flex-start;
     align-items: flex-start;
-    margin: 0 auto;
+    margin-bottom: 2em;
     max-width: 320px;
     max-height: 700px;
     position: relative;
